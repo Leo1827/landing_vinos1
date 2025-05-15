@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vin Rouge Hero</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#6f0303] text-[#000] font-serif">
+
+    <!-- Hero Section -->
+    <section
+        class="min-h-screen flex items-center justify-center  px-6 md:px-16 py-16 relative overflow-hidden bg-cover bg-no-repeat bg-bottom"
+    >
+        <!-- Left Content -->
+        <div class="z-10 text-center md:text-left md:max-w-100">
+        <h4 class="text-sm text-center uppercase tracking-widest text-[#b9722a] font-semibold mb-6">
+            Winemaking Tradition
+        </h4>
+        <h1 class="text-2xl text-center sm:text-5xl md:text-5xl leading-tight mb-6">
+            Black wine é un evento exclusivo<br />
+            da Black Friday dedicado aos<br />
+            verdadeiros apreciadores <br />
+            e investidores em vinhos finos.
+        </h1>
+        <!-- Botón que abre modal -->
+        <div class="text-center">
+            <button
+                id="openModalBtn"
+                class="border border-[#b9722a] text-[#b9722a] px-6 py-2 uppercase tracking-wider hover:bg-[#b9722a] hover:text-white transition"
+            >
+                Inscreva-se no<br>
+                evento
+            </button>
+        </div>
+        </div>
+
+    </section>
+  
+    <section class="min-h-[80vh] w-[80%] mx-auto py-16 grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center ont-['Inter']">
+    
+        <!-- Card 1 -->
+        <div class="bg-[#] border-l-[#b9722a] text-[#f3ede7] rounded-2xl shadow-lg p-8 transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl w-full h-full flex flex-col justify-center items-center text-center">
+                <div class="text-3xl font-bold text-[#b9722a] mb-4">1.</div>
+                <h3 class="text-2xl text-[#b9722a] font-['Playfair Display'] font-semibold mb-2">Rótulos raros</h3>
+                <p class="text-[#d6c6be] leading-relaxed">
+                Garrafas únicas com alto potencial <br> de valorização ao longo do tempo.
+            </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-[#] text-[#f3ede7] rounded-2xl p-8 transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl w-full h-full flex flex-col justify-center items-center text-center">
+            <div class="text-3xl font-bold text-[#b9722a] mb-4">2.</div>
+                <h3 class="text-2xl text-[#b9722a] font-['Playfair Display'] font-semibold mb-2">Descontos exclusivos</h3>
+                <p class="text-[#d6c6be] leading-relaxed">
+                Até 30% de desconto em seleções <br>
+                com curadoria especializada.
+            </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-[#] text-[#f3ede7] rounded-2xl p-8 transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl w-full h-full flex flex-col justify-center items-center text-center">
+            <div class="text-3xl font-bold text-[#b9722a] mb-4">3.</div>
+            <h3 class="text-2xl text-[#b9722a]  font-['Playfair Display'] font-semibold mb-2">Condições únicas</h3>
+            <p class="text-[#d6c6be] leading-relaxed">
+            Ofertas especiais que tornam <br>
+            cada aquisição uma relíquia valiosa.
+            </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-[#] text-[#f3ede7] rounded-2xl shadow-lg p-8 transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl w-full h-full flex flex-col justify-center items-center text-center">
+            <div class="text-3xl font-bold text-[#b9722a] mb-4">4.</div>
+            <h3 class="text-2xl text-[#b9722a]  font-['Playfair Display'] font-semibold mb-2">Consultoria personalizada</h3>
+            <p class="text-[#d6c6be] leading-relaxed">
+            Apoio individual para decisões <br>
+            inteligentes no universo dos vinhos.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+<section class="w-[90%] max-w-7xl mx-auto py-16 text-center text-[#f3ede7] font-['Inter']">
+  
+  <!-- Advertencia -->
+  <p class="text-sm md:text-base text-[#d6c6be] uppercase tracking-wider mb-6">
+    Estoque limitado. Seleção restrita. Sem reposição.
+  </p>
+
+  <!-- Botón CTA -->
+  <a href="#produtos-exclusivos" class="inline-block bg-[#b9722a] hover:bg-[#a05f20] text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-md mb-10">
+    Ver seleção exclusiva
+  </a>
+
+  <!-- Productos -->
+  <div id="produtos-exclusivos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center">
+    
+    <!-- Producto 1 -->
+    <div class="bg-[#] rounded-xl shadow-lg p-6 w-full max-w-[300px]">
+      <div class="h-40 bg-[#b9722a22] rounded mb-4 flex items-center justify-center text-[#b9722a] text-2xl">
+        Imagen 1
+      </div>
+      <h4 class="text-lg font-semibold mb-2 font-['Playfair Display']">Rótulo exclusivo</h4>
+      <p class="text-[#d6c6be] text-sm leading-relaxed">
+        Edição limitada com alta valorização.
+      </p>
+    </div>
+
+    <!-- Producto 2 -->
+    <div class="bg-[#] rounded-xl shadow-lg p-6 w-full max-w-[300px]">
+      <div class="h-40 bg-[#b9722a22] rounded mb-4 flex items-center justify-center text-[#b9722a] text-2xl">
+        Imagen 2
+      </div>
+      <h4 class="text-lg font-semibold mb-2 font-['Playfair Display']">Safra rara</h4>
+      <p class="text-[#d6c6be] text-sm leading-relaxed">
+        Vinhos selecionados sem reposição futura.
+      </p>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="bg-[#] rounded-xl shadow-lg p-6 w-full max-w-[300px]">
+      <div class="h-40 bg-[#b9722a22] rounded mb-4 flex items-center justify-center text-[#b9722a] text-2xl">
+        Imagen 3
+      </div>
+      <h4 class="text-lg font-semibold mb-2 font-['Playfair Display']">Coleção Premium</h4>
+      <p class="text-[#d6c6be] text-sm leading-relaxed">
+        Garrafas para verdadeiros colecionadores.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-[#000] text-white py-6 text-center">
+        <p class="text-sm">&copy; 2025 Vin Rouge. All rights reserved.</p>
+    </footer>
+
+    <!-- modal -->
+    <div id="modalBackdrop" class="fixed flex justify-center inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50">
+        <!-- Modal -->
+        <div class="bg-[#f3ede7] rounded-2xl shadow-2xl w-full max-w-sm p-6 relative" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="font-family: 'Playfair Display', serif;">
+            <!-- Botón cerrar -->
+            <button id="closeModalBtn" class="absolute top-3 right-4 text-[#000] hover:text-[#b9722a] text-2xl font-bold" aria-label="Fechar modal" >
+                &times;
+            </button>
+
+            <!-- Título -->
+            <h2 id="modalTitle" class="text-2xl font-semibold mb-6 text-center text-[#000] tracking-wide" >
+                Inscreva-se no Evento
+            </h2>
+
+            <!-- Formulario -->
+            <form id="contactForm" action="gracias.html" method="GET" class="space-y-4" >
+                <div>
+                    <label for="name" class="block text-[#000] font-medium mb-1" >Nome completo</label>
+                    <input type="text" id="name" name="name" required class="w-full border border-[#4b0e1e] rounded px-4 py-2 bg-transparent focus:outline-none focus:ring-2 focus:ring-[#b9722a] placeholder:text-[#86696d]" placeholder="Digite seu nome" />
+                </div>
+
+                <div>
+                    <label for="email" class="block text-[#000] font-medium mb-1" >
+                        E-mail
+                    </label>
+                    <input type="email" id="email" name="email" required class="w-full border border-[#4b0e1e] rounded px-4 py-2 bg-transparent focus:outline-none focus:ring-2 focus:ring-[#b9722a] placeholder:text-[#86696d]" placeholder="nome@email.com" />
+                </div>
+
+                <div>
+                    <label for="message" class="block text-[#000] font-medium mb-1" >
+                        Mensagem
+                    </label>
+                    <textarea id="message" name="message" rows="3" required class="w-full border border-[#4b0e1e] rounded px-4 py-2 bg-transparent focus:outline-none focus:ring-2 focus:ring-[#b9722a] placeholder:text-[#86696d]" placeholder="Escreva sua mensagem..." ></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-[#6f0303] text-white uppercase font-semibold py-2 rounded hover:bg-[#320914] transition tracking-wide" >
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
