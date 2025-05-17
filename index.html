@@ -1,177 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vin Rouge Hero</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
-</head>
-<body id="pageBody" class="bg-[#a03c3c] text-[#000] font-serif transition-colors duration-300">
 
-  <!-- Switcher Panel -->
-  <div class="fixed right-4 top-1/3 bg-white bg-opacity-80 p-4 rounded-lg shadow-lg space-y-4 z-50">
-    <!-- Background Color Picker -->
-    <div class="flex flex-col items-start">
-      <label for="bgColorPicker" class="text-sm font-medium text-gray-700 mb-1">Fondo</label>
-      <input type="color" id="bgColorPicker" class="w-10 h-10 p-0 border-0" title="Seleccione color de fondo">
-    </div>
-    <!-- Font Family Selector -->
-    <div class="flex flex-col items-start">
-      <label for="fontSelector" class="text-sm font-medium text-gray-700 mb-1">Fuente</label>
-      <select id="fontSelector" class="border border-gray-300 rounded px-2 py-1 bg-white">
-        <option value="serif">Por Defecto (Serif)</option>
-        <option value="sans-serif">Sans Serif</option>
-        <option value="Playfair Display, serif">Playfair Display</option>
-        <option value="Inter, sans-serif">Inter</option>
-        <option value="monospace">Monospace</option>
-      </select>
-    </div>
-    <!-- Text Color Picker -->
-    <div class="flex flex-col items-start">
-      <label for="textColorPicker" class="text-sm font-medium text-gray-700 mb-1">Texto</label>
-      <input type="color" id="textColorPicker" class="w-10 h-10 p-0 border-0" title="Seleccione color de texto">
-    </div>
-    <!-- Paragraph Color Picker -->
-    <div class="flex flex-col items-start">
-      <label for="paraColorPicker" class="text-sm font-medium text-gray-700 mb-1">Párrafos</label>
-      <input type="color" id="paraColorPicker" class="w-10 h-10 p-0 border-0" title="Color de párrafos">
-    </div>
-    <!-- Title Color Picker -->
-    <div class="flex flex-col items-start">
-      <label for="titleColorPicker" class="text-sm font-medium text-gray-700 mb-1">Títulos</label>
-      <input type="color" id="titleColorPicker" class="w-10 h-10 p-0 border-0" title="Color de títulos">
-    </div>
-    <!-- Button Color Picker -->
-    <div class="flex flex-col items-start">
-      <label for="btnColorPicker" class="text-sm font-medium text-gray-700 mb-1">Botones</label>
-      <input type="color" id="btnColorPicker" class="w-10 h-10 p-0 border-0" title="Color de botones">
-    </div>
-  </div>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente elegante Cinzel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+
+  <!-- Agregar la fuente a Tailwind -->
+  <style>
+    @layer utilities {
+      .font-cinzel {
+        font-family: 'Cinzel', serif;
+      }
+      @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+      .animate-fade-in-up {
+        animation: fade-in-up 1.2s ease-out forwards;
+      }
+    }
+  </style>
+</head>
+
+<body id="pageBody" class="bg-black text-white transition-colors duration-300 font-cinzel">
 
   <!-- Hero Section -->
-  <section class="min-h-screen flex items-center justify-center px-6 md:px-16 py-16 relative overflow-hidden bg-cover bg-no-repeat bg-bottom">
-    <div class="z-10 text-center md:text-left md:max-w-100">
-      <h4 class="text-sm text-center uppercase tracking-widest text-[#b9722a] font-semibold mb-6">
+  <section class="min-h-screen flex items-center py-16 justify-center px-6 md:px-16 bg-cover bg-no-repeat bg-bottom relative overflow-hidden">
+    <div class="z-10 md:text-left max-w-4xl animate-fade-in-up">
+      <h4 class="text-sm text-center uppercase tracking-widest text-[#7B1E3A] font-semibold mb-6">
         Winemaking Tradition
       </h4>
-      <h1 class="text-2xl text-center sm:text-5xl md:text-5xl leading-tight mb-6">
-        Black wine é un evento exclusivo<br />
+      <h1 class="text-1xl text-center sm:text-5xl md:text-3xl leading-tight mb-6">
+        Black wine é um evento exclusivo<br />
         da Black Friday dedicado aos<br />
         verdadeiros apreciadores <br />
         e investidores em vinhos finos.
       </h1>
       <div class="text-center">
-        <button id="openModalBtn" class="border border-[#b9722a] text-[#b9722a] px-6 py-2 uppercase tracking-wider hover:bg-[#b9722a] hover:text-white transition">
-          Inscreva-se no<br />evento
+        <button id="openModalBtn" 
+          class="border border-t-[#7B1E3A] border-l-[#000] border-r-[#000] border-b-[#7B1E3A] text-[#fff] px-16 py-2 uppercase tracking-wider hover:bg-[#7B1E3A] hover:text-white transition">
+            Inscreva-se no evento
         </button>
       </div>
     </div>
   </section>
 
-  <!-- Cards Section -->
-  <section class="min-h-[80vh] w-[80%] mx-auto py-16 grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center font-['Inter']">
+  <!-- Sección de Tarjetas con Imagen y Efecto de Click -->
+  <section class="w-full min-h-[90vh] grid grid-cols-1 md:grid-cols-2 gap-4">
     <!-- Card 1 -->
-    <div class="bg-[#] border-l-[#b9722a] text-[#f3ede7] rounded-2xl shadow-lg p-8 transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl w-full flex flex-col items-center text-center">
-      <div class="text-3xl font-bold text-[#b9722a] mb-4">1.</div>
-      <h3 class="text-2xl text-[#b9722a] mb-2">Rótulos raros</h3>
-      <p class="text-[#000] leading-relaxed">
-        Garrafas únicas com alto potencial<br />de valorização ao longo do tempo.
-      </p>
+    <div class="group relative h-[45vh] cursor-pointer overflow-hidden">
+      <img
+        src="https://images.pexels.com/photos/87224/pexels-photo-87224.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt="Rótulos Raros"
+        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+      <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 px-6">
+        <h3 class="text-3xl font-bold font-cinzel mb-2">Rótulos Raros</h3>
+        <p class="text-lg">Garrafas únicas com alto potencial de valorização ao longo do tempo.</p>
+      </div>
     </div>
+
     <!-- Card 2 -->
-    <div class="bg-[#] text-[#f3ede7] rounded-2xl p-8 transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl w-full flex flex-col items-center text-center">
-      <div class="text-3xl font-bold text-[#b9722a] mb-4">2.</div>
-      <h3 class="text-2xl text-[#b9722a] mb-2">Descontos exclusivos</h3>
-      <p class="text-[#000] leading-relaxed">
-        Até 30% de desconto em seleções<br />com curadoria especializada.
-      </p>
+    <div class="group relative h-[45vh] cursor-pointer overflow-hidden">
+      <img
+        src="https://images.pexels.com/photos/4515526/pexels-photo-4515526.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt="Descontos Exclusivos"
+        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+      <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 px-6">
+        <h3 class="text-3xl font-bold font-cinzel mb-2">Descontos Exclusivos</h3>
+        <p class="text-lg">Até 30% de desconto em seleções com curadoria especializada.</p>
+      </div>
     </div>
+
     <!-- Card 3 -->
-    <div class="bg-[#] text-[#f3ede7] rounded-2xl p-8 transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl w-full flex flex-col items-center text-center">
-      <div class="text-3xl font-bold text-[#b9722a] mb-4">3.</div>
-      <h3 class="text-2xl text-[#b9722a] mb-2">Condições únicas</h3>
-      <p class="text-[#000] leading-relaxed">
-        Ofertas especiais que tornam<br />cada aquisição uma relíquia valiosa.
-      </p>
+    <div class="group relative h-[45vh] cursor-pointer overflow-hidden">
+      <img
+        src="https://images.pexels.com/photos/9364762/pexels-photo-9364762.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt="Condições Únicas"
+        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+      <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 px-6">
+        <h3 class="text-3xl font-bold font-cinzel mb-2">Condições Únicas</h3>
+        <p class="text-lg">Ofertas especiais que tornam cada aquisição uma relíquia valiosa.</p>
+      </div>
     </div>
+
     <!-- Card 4 -->
-    <div class="bg-[#] text-[#f3ede7] rounded-2xl shadow-lg p-8 transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl w-full flex flex-col items-center text-center">
-      <div class="text-3xl font-bold text-[#b9722a] mb-4">4.</div>
-      <h3 class="text-2xl text-[#b9722a] mb-2">Consultoria personalizada</h3>
-      <p class="text-[#000] leading-relaxed">
-        Apoio individual para decisões<br />inteligentes no universo dos vinhos.
-      </p>
+    <div class="group relative h-[45vh] cursor-pointer overflow-hidden">
+      <img
+        src="https://images.pexels.com/photos/14393728/pexels-photo-14393728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt="Consultoria Personalizada"
+        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+      <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 px-6">
+        <h3 class="text-3xl font-bold font-cinzel mb-2">Consultoria Personalizada</h3>
+        <p class="text-lg">Apoio individual para decisões inteligentes no universo dos vinhos.</p>
+      </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="w-[90%] max-w-7xl mx-auto py-16 text-center text-[#f3ede7] font-['Inter']">
-    <p class="text-2xl py-6 text-[#000] uppercase tracking-w wider mb-6">
-      Estoque limitado. Seleção restrita. Sem reposição.
+<!-- CTA Rediseñada como Texto Central -->
+<section class="w-full py-24 bg-black text-center">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-4xl font-cinzel text-[#f3e8dc] mb-6 animate-fade-in-up">
+      Descubra o Universo Vin Rouge
+    </h2>
+    <p class="text-lg text-[#ccc] leading-relaxed mb-12">
+      Uma jornada sensorial pelos sabores mais exclusivos.  
+      Três passos para elevar sua apreciação de vinhos finos.
     </p>
-    <a href="#produtos-exclusivos" class="inline-block bg-[#b9722a] text-[#000] hover:bg-[#a05f20] font-semibold py-3 px-8 rounded-full transition duration-300 shadow-md mb-10">
-      Ver seleção exclusiva
-    </a>
-    <div id="produtos-exclusivos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center">
-      <!-- Producto 1 -->
-      <div class="bg-[#] rounded-xl shadow-lg p-6 w-full max-w-[300px]">
-        <div class="h-40 bg-[#b9722a22] rounded mb-4 flex items-center justify-center text-[#b9722a] text-2xl">Imagen 1</div>
-        <h4 class="text-lg font-semibold text-[#b9722a] mb-2 font-['Playfair Display']">Rótulo exclusivo</h4>
-        <p class="text-[#000] text-sm leading-relaxed">Edição limitada com alta valorização.</p>
+    <div class="text-center">
+        <button id="openModalBtn" 
+          class="border border-t-[#7B1E3A] border-l-[#000] border-r-[#000] border-b-[#7B1E3A] text-[#fff] px-16 py-2 uppercase tracking-wider hover:bg-[#7B1E3A] hover:text-white transition">
+            Inscreva-se no evento
+        </button>
       </div>
-      <!-- Producto 2 -->
-      <div class="bg-[#] rounded-xl shadow-lg p-6 w-full max-w-[300px]">
-        <div class="h-40 bg-[#b9722a22] rounded mb-4 flex items-center justify-center text-[#b9722a] text-2xl">Imagen 2</div>
-        <h4 class="text-lg font-semibold text-[#b9722a] mb-2 font-['Playfair Display']">Safra rara</h4>
-        <p class="text-[#000] text-sm leading-relaxed">Vinhos selecionados sem reposição futura.</p>
-      </div>
-      <!-- Producto 3 -->
-      <div class="bg-[#]rounded-xl shadow-lg p-6 w-full max-w-[300px]">
-        <div class="h-40 bg-[#b9722a22] rounded mb-4 flex items-center justify-center text-[#b9722a] text-2xl">Imagen 3</div>
-        <h4 class="text-lg font-semibold text-[#b9722a] mb-2 font-['Playfair Display']">Coleção Premium</h4>
-        <p class="text-[#000] text-sm leading-relaxed">Garrafas para verdadeiros colecionadores.</p>
-      </div>
+  </div>
+</section>
+
+<!-- Escalera de 3 Secciones -->
+<section class="relative w-full max-w-6xl mx-auto py-24 px-4">
+  <div class="flex justify-between items-start relative">
+
+    <!-- Paso 1 -->
+    <div class="w-1/3 transform translate-y-0">
+      <img src="https://garrafeiracanhoto.com/cdn/shop/files/C7543E39-730B-4327-8E16-F4BF0624EE2A.jpg?v=1724078435&width=823" alt="Seleção" class="mx-auto w-100 h-40 mb-6 transition-transform duration-500 hover:scale-110" />
+      <h3 class="text-2xl font-cinzel text-[#7B1E3A] mb-2">Seleção Exclusiva</h3>
+      <p class="text-gray-300">
+        Garrafas selecionadas com curadoria especializada<br>
+        para paladares exigentes.
+      </p>
     </div>
-  </section>
+
+    <!-- Paso 2 -->
+    <div class="w-1/3 transform translate-y-8">
+      <img src="https://garrafeiracanhoto.com/cdn/shop/files/C7543E39-730B-4327-8E16-F4BF0624EE2A.jpg?v=1724078435&width=823" alt="Rótulos Raros" class="mx-auto h-40 mb-6 transition-transform duration-500 hover:scale-110" />
+      <h3 class="text-2xl font-cinzel text-[#7B1E3A] mb-2">Rótulos Raros</h3>
+      <p class="text-gray-300">
+        Edições limitadas e safras únicas<br>
+        que valorizam com o tempo.
+      </p>
+    </div>
+
+    <!-- Paso 3 -->
+    <div class="w-1/3 transform translate-y-16">
+      <img src="https://garrafeiracanhoto.com/cdn/shop/files/C7543E39-730B-4327-8E16-F4BF0624EE2A.jpg?v=1724078435&width=823" alt="Consultoria" class="mx-auto h-40 mb-6 transition-transform duration-500 hover:scale-110" />
+      <h3 class="text-2xl font-cinzel text-[#7B1E3A] mb-2">Consultoria Premium</h3>
+      <p class="text-gray-300">
+        Orientação individualizada para<br>
+        escolhas que transcendem o comum.
+      </p>
+    </div>
+
+  </div>
+</section>
 
   <!-- Footer -->
-  <footer class="bg-[#000] text-white py-6 pt-10 text-center">
-    <p class="text-sm">&copy; 2025 Vin Rouge. All rights reserved.</p>
+  <footer class="bg-black text-white py-6 pt-10 text-center">
+    <p class="text-sm">&copy; 2025 Vin Rouge. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Modal -->
-  <div id="modalBackdrop" class="fixed flex inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50">
-    <div class="bg-[#f3ede7] rounded-2xl shadow-2xl w-full max-w-sm p-6 relative" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="font-family: 'Playfair Display', serif;">
-      <button id="closeModalBtn" class="absolute top-3 right-4 text-[#000] hover:text-[#b9722a] text-2xl font-bold">&times;</button>
-      <h2 id="modalTitle" class="text-2xl font-semibold mb-6 text-center text-[#000] tracking-wide">Inscreva-se no Evento</h2>
-      <form id="contactForm" action="gracias.html" method="GET" class="space-y-4">
-        <div><label for="name" class="block text-[#000] font-medium mb-1">Nome completo</label><input type="text" id="name" name="name" required class="w-full border border-[#4b0e1e] rounded px-4 py-2 bg-transparent focus:outline-none focus:ring-2 focus:ring-[#b9722a] placeholder:text-[#86696d]" placeholder="Digite seu nome" /></div>
-        <div><label for="email" class="block text-[#000] font-medium mb-1">E-mail</label><input type="email" id="email" name="email" required class="w-full border border-[#4b0e1e] rounded px-4 py-2 bg-transparent focus:outline-none focus:ring-2 focus:ring-[#b9722a] placeholder:text-[#86696d]" placeholder="nome@email.com" /></div>
-        <div><label for="message" class="block text-[#000] font-medium mb-1">Mensagem</label><textarea id="message" name="message" rows="3" required class="w-full border border-[#4b0e1e] rounded px-4 py-2 bg-transparent focus:outline-none focus:ring-2 focus:ring-[#b9722a] placeholder:text-[#86696d]" placeholder="Escreva sua mensagem..."></textarea></div>
+  <!-- Modal de registro -->
+  <div id="modalBackdrop" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50">
+    <div class="bg-[#f3ede7] rounded-2xl shadow-2xl w-full max-w-sm p-6 relative font-cinzel">
+      <button id="closeModalBtn" class="absolute top-3 right-4 text-black hover:text-[#b9722a] text-2xl font-bold">&times;</button>
+      <h2 class="text-2xl font-semibold mb-6 text-center text-black tracking-wide">Inscreva-se no Evento</h2>
+      <form action="gracias.html" method="GET" class="space-y-4">
+        <div>
+          <label for="name" class="block text-black font-medium mb-1">Nome completo</label>
+          <input type="text" id="name" name="name" required class="w-full border border-[#4b0e1e] rounded px-4 py-2 bg-transparent focus:outline-none focus:ring-2 focus:ring-[#b9722a] placeholder:text-[#86696d]" placeholder="Digite seu nome" />
+        </div>
+        <div>
+          <label for="email" class="block text-black font-medium mb-1">E-mail</label>
+          <input type="email" id="email" name="email" required class="w-full border border-[#4b0e1e] rounded px-4 py-2 bg-transparent focus:outline-none focus:ring-2 focus:ring-[#b9722a] placeholder:text-[#86696d]" placeholder="nome@email.com" />
+        </div>
+        <div>
+          <label for="message" class="block text-black font-medium mb-1">Mensagem</label>
+          <textarea id="message" name="message" rows="3" required class="w-full border border-[#4b0e1e] rounded px-4 py-2 bg-transparent focus:outline-none focus:ring-2 focus:ring-[#b9722a] placeholder:text-[#86696d]" placeholder="Escreva sua mensagem..."></textarea>
+        </div>
         <button type="submit" class="w-full bg-[#6f0303] text-white uppercase font-semibold py-2 rounded hover:bg-[#320914] transition tracking-wide">Enviar</button>
       </form>
     </div>
   </div>
 
-  <!-- Switcher Script -->
-  <script>
-    const bgPicker = document.getElementById('bgColorPicker');
-    const textPicker = document.getElementById('textColorPicker');
-    const fontSelector = document.getElementById('fontSelector');
-    const paraPicker = document.getElementById('paraColorPicker');
-    const titlePicker = document.getElementById('titleColorPicker');
-    const btnPicker = document.getElementById('btnColorPicker');
-    const body = document.getElementById('pageBody');
-
-    bgPicker.addEventListener('input', e => body.style.backgroundColor = e.target.value);
-    textPicker.addEventListener('input', e => body.style.color = e.target.value);
-    fontSelector.addEventListener('change', e => body.style.fontFamily = e.target.value);
-    paraPicker.addEventListener('input', e => document.querySelectorAll('p').forEach(el => el.style.color = e.target.value));
-    titlePicker.addEventListener('input', e => document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(el => el.style.color = e.target.value));
-    btnPicker.addEventListener('input', e => document.querySelectorAll('button, a').forEach(el => { el.style.backgroundColor = e.target.value; el.style.borderColor = e.target.value; el.style.color = '#fff'; }));
-  </script>
-
-    <script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
